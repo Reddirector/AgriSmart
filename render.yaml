@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: agrismart
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: AGRISMART_ALLOWED_ORIGIN
+        sync: false
+      - key: AGRISMART_OPERATOR_TOKEN
+        generateValue: true
+      - key: AGRISMART_AUTOPILOT_BRIDGE_URL
+        sync: false
+      - key: AGRISMART_BRIDGE_TOKEN
+        sync: false
+      - key: AGRISMART_LLM_URL
+        sync: false
+      - key: AGRISMART_LLM_API_KEY
+        sync: false
+      - key: AGRISMART_LLM_MODEL
+        value: agrismart-assistant
